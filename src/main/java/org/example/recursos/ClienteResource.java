@@ -29,13 +29,13 @@ public class ClienteResource {
 
     // Insere cliente
     @PostMapping
-    public Cliente create(@RequestBody Cliente cliente) {
+    public Cliente createCliente(@RequestBody Cliente cliente) {
         return clienteService.inserir(cliente);
     }
 
     // Atualiza cliente
     @PutMapping("/{id}")
-    public ResponseEntity<Cliente> update(@PathVariable Long id,
+    public ResponseEntity<Cliente> updateCliente(@PathVariable Long id,
                                           @RequestBody Cliente cliente) {
         return clienteService.buscarPorId(id)
                 .map(existingCliente -> {
